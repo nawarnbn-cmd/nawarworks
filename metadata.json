@@ -1,0 +1,6 @@
+{
+  "name": "Nawar NBN Portfolio",
+  "description": "Premium cinematic portfolio website for Nawar NBN, Cinematographer, Editor & Colorist featuring interactive LUT presets, film reels, and post-production workspace.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
