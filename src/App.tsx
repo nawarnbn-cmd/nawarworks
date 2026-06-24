@@ -52,7 +52,9 @@ export default function App() {
     <div className="bg-black min-h-screen text-white font-sans antialiased selection:bg-[#ff8500] selection:text-black relative">
       
       {/* High-end textured background mirroring the uploaded reference (Premium cracked carbon/wood slate with glowing orange veins) */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      <div className="hidden md:block fixed inset-0 overflow-hidden pointer-events-none z-0">
+        
+      <div className="md:hidden fixed inset-0 bg-black pointer-events-none z-0"></div>
         
         {/* Base rich charcoal-black textured backing */}
         <div className="absolute inset-0 bg-[#08080a]" />
