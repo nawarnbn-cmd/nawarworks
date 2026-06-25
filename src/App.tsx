@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import WorksGrid from "./components/WorksGrid";
-import Services from "./components/Services";
-import OurProcess from "./components/OurProcess";
-import BookingContact from "./components/BookingContact";
-import Footer from "./components/Footer";
-import CVViewer from "./components/CVViewer";
-import LutSandbox from "./components/LutSandbox";
+const Hero = lazy(() => import("./components/Hero"));
+const WorksGrid = lazy(() => import("./components/WorksGrid"));
+const Services = lazy(() => import("./components/Services"));
+const OurProcess = lazy(() => import("./components/OurProcess"));
+const BookingContact = lazy(() => import("./components/BookingContact"));
+const Footer = lazy(() => import("./components/Footer"));
+const CVViewer = lazy(() => import("./components/CVViewer"));
+const LutSandbox = lazy(() => import("./components/LutSandbox"));
 
 export default function App() {
   // Modal states
@@ -177,6 +177,7 @@ export default function App() {
       </div>
 
       {/* 1. Header Capsule with smooth scroll handles */}
+      <Suspense fallback={null}>
       <Header onScrollToSection={handleScrollToSection} />
 
       {/* 2. Main Page Layout Sections Flow */}
@@ -215,6 +216,8 @@ export default function App() {
         exportedEstimate={exportedEstimate} 
         onClearEstimate={handleClearEstimate} 
       />
+      
+      </Suspense>
 
     </div>
   );
