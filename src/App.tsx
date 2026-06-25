@@ -62,7 +62,9 @@ export default function App() {
         <div className="absolute inset-0 opacity-[0.03] md:opacity-[0.06] mix-blend-overlay bg-repeat" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
         }} />
-
+        
+        {/* Desktop Background */}
+      <div className="hidden md:block">
         {/* Master SVG containing Glowing Orange-Red Veins and Diagonal Slate Cuts */}
         <svg
   className="absolute inset-0 w-full h-full"
@@ -171,6 +173,83 @@ export default function App() {
           <circle cx="850" cy="800" r="1" fill="#ffdd00" opacity="0.4" filter="url(#crack-glow)" />
           <circle cx="1550" cy="190" r="0.8" fill="#ff8500" opacity="0.35" />
         </svg>
+      </div>
+      
+    
+
+{/* Mobile Background */}
+<div className="block md:hidden">
+
+    <svg
+        className="absolute inset-0 w-full h-full"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 430 932"
+        preserveAspectRatio="xMidYMid slice"
+    >
+
+        <defs>
+
+            <linearGradient id="mobileLine" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#ff5a00"/>
+                <stop offset="50%" stopColor="#ff8500"/>
+                <stop offset="100%" stopColor="#ffcf66"/>
+            </linearGradient>
+
+            <filter id="mobileGlow">
+                <feGaussianBlur stdDeviation="0.8" result="blur"/>
+                <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+
+        </defs>
+
+        <path
+            d="M-40 260 C60 220 180 340 470 280"
+            stroke="url(#mobileLine)"
+            strokeWidth="1.5"
+            opacity="0.35"
+            fill="none"
+            filter="url(#mobileGlow)"
+        />
+
+        <path
+            d="M170 320 C200 430 220 520 290 610"
+            stroke="#ff8500"
+            strokeWidth="0.7"
+            opacity="0.22"
+            fill="none"
+        />
+
+        <path
+            d="M-30 520 C130 470 290 610 470 540"
+            stroke="url(#mobileLine)"
+            strokeWidth="1.2"
+            opacity="0.28"
+            fill="none"
+        />
+
+        <path
+            d="M-20 900 L460 630"
+            stroke="url(#mobileLine)"
+            strokeWidth="1"
+            opacity="0.28"
+            fill="none"
+        />
+
+        <circle cx="120" cy="270" r="1" fill="#ff8500" opacity="0.35"/>
+
+        <circle cx="240" cy="520" r="0.8" fill="#ff8500" opacity="0.25"/>
+
+        <circle cx="330" cy="650" r="0.8" fill="#ffd26a" opacity="0.35"/>
+
+        <circle cx="270" cy="420" r="0.9" fill="#ff8500" opacity="0.30"/>
+
+    </svg>
+
+</div>
+ 
 
         {/* Dynamic vignette atmosphere for premium cinema feeling */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0)_15%,rgba(0,0,0,0.85)_100%)] mix-blend-multiply" />
