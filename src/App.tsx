@@ -52,25 +52,29 @@ export default function App() {
     <div className="bg-black min-h-screen text-white font-sans antialiased selection:bg-[#ff8500] selection:text-black relative">
       
       {/* High-end textured background mirroring the uploaded reference (Premium cracked carbon/wood slate with glowing orange veins) */}
-      <div className="hidden md:block fixed inset-0 overflow-hidden pointer-events-none z-0">
         
-      <div className="md:hidden fixed inset-0 bg-black pointer-events-none z-0"></div>
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         
         {/* Base rich charcoal-black textured backing */}
         <div className="absolute inset-0 bg-[#08080a]" />
 
         {/* Noise Filter Overlay to simulate fine-grained wood/slate surface texture */}
-        <div className="absolute inset-0 opacity-[0.06] mix-blend-overlay bg-repeat" style={{
+        <div className="absolute inset-0 opacity-[0.03] md:opacity-[0.06] mix-blend-overlay bg-repeat" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
         }} />
 
         {/* Master SVG containing Glowing Orange-Red Veins and Diagonal Slate Cuts */}
-        <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <svg
+  className="absolute inset-0 w-full h-full"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1920 1080"
+  preserveAspectRatio="xMidYMid slice"
+>
           <defs>
             {/* Glowing filter for hot orange/amber micro-cracks */}
             <filter id="crack-glow" x="-20%" y="-20%" width="140%" height="140%">
               <feGaussianBlur stdDeviation="1.5" result="blur1" />
-              <feGaussianBlur stdDeviation="4.5" result="blur2" />
+              <feGaussianBlur stdDeviation="2.2" result="blur2" />
               <feMerge>
                 <feMergeNode in="blur2" />
                 <feMergeNode in="blur1" />
